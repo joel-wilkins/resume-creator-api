@@ -20,7 +20,7 @@ namespace ResumeCreatorApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<ResumeCreatorContext>(options => options.UseNpgsql(""));
+            services.AddDbContext<ResumeCreatorContext>(options => options.UseNpgsql(Configuration["ConnectionString"]));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
